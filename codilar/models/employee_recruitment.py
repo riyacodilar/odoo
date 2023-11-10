@@ -4,7 +4,7 @@ from odoo import models, fields
 class Employees(models.Model):
     _name = 'employee.recruitment'
 
-    Dep_name = fields.Many2many('employee.department', string='dep name')
+    department = fields.Many2many('employee.department', string='Department Name')
     boolean = fields.Boolean(string='department', default=False)
 
 

@@ -6,7 +6,7 @@
             <field name="model">employee.sale</field>
             <field name="arch" type="xml">
                 <tree string="Employee sale">
-                    <field name="Dep_name"/>
+                    <field name="department"/>
                     <field name="sale_amount"/>
                 </tree>
             </field>
@@ -19,7 +19,7 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="Dep_name"/>
+                                <field name="department"/>
                                 <field name="sale_amount"/>
                             </group>
                         </group>
@@ -28,7 +28,7 @@
             </field>
         </record>
                 <record id="action_employee_sale_list" model="ir.actions.act_window">
-                    <field name="name">employee sale</field>
+                    <field name="name">Sale</field>
                     <field name="type">ir.actions.act_window</field>
                     <field name="res_model">employee.sale</field>
                     <field name="view_mode">tree,form</field>
@@ -36,7 +36,7 @@
 
         <menuitem
             id="menu_employee_sale_child"
-            name="sales"
+            name="Sale"
             parent="menu_employee_details_child"
             sequence="1"
             action ="action_employee_sale_list"

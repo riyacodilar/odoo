@@ -6,7 +6,7 @@
             <field name="model">employee.recruitment</field>
             <field name="arch" type="xml">
                 <tree string="Employee recruitment">
-                    <field name="Dep_name"/>
+                    <field name="department"/>
                     <field name="boolean"/>
                 </tree>
             </field>
@@ -19,9 +19,8 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="Dep_name" widget="many2many_tags"/>
+                                <field name="department" widget="many2many_tags"/>
                                 <field name="boolean" widget="boolean_toggle"/>
-
                             </group>
                         </group>
                     </sheet>
@@ -29,7 +28,7 @@
             </field>
         </record>
                 <record id="action_employee_recruitment_list" model="ir.actions.act_window">
-                    <field name="name">employee recruitment</field>
+                    <field name="name">Recruitment</field>
                     <field name="type">ir.actions.act_window</field>
                     <field name="res_model">employee.recruitment</field>
                     <field name="view_mode">tree,form</field>
@@ -37,7 +36,7 @@
 
         <menuitem
             id="menu_employee_recruitment_child"
-            name="sales"
+            name="Recruitment"
             parent="menu_employee_department_child"
             sequence="1"
             action ="action_employee_recruitment_list"

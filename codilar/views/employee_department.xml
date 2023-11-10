@@ -7,9 +7,9 @@
             <field name="arch" type="xml">
                 <tree string="Employee department">
                     <field name="name"/>
-                    <field name="Dep_name"/>
-                    <field name="Dep_center"/>
-                    <field name="Dep_num"/>
+                    <field name="department"/>
+                    <field name="department_centre"/>
+                    <field name="department_no"/>
                 </tree>
             </field>
         </record>
@@ -22,11 +22,11 @@
                         <group>
                             <group>
                                 <field name="name"/>
-                                <field name="Dep_name"/>
-                                <field name="Dep_center"/>
+                                <field name="department"/>
+                                <field name="department_centre"/>
                             </group>
                             <group>
-                                <field name="Dep_num"/>
+                                <field name="department_no"/>
                             </group>
                         </group>
                     </sheet>
@@ -41,11 +41,11 @@
                 </record>
         <menuitem
             id="menu_employee_department_list_root"
-            name="Employee_department"
+            name="Employee Department"
             sequence="1"/>
         <menuitem
             id="menu_employee_department_child"
-            name="department"
+            name="Department"
             parent="menu_employee_details_list_root"
             sequence="0"
             action ="action_employee_department_list"
