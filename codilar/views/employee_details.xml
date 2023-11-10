@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="employee_details_tree_view" model="ir.ui.view">
+            <field name="name">employee.details.tree</field>
+            <field name="model">employee.details</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Details">
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="company"/>
+                </tree>
+            </field>
+        </record>
+        <record id="employee_details_form_view" model="ir.ui.view">
+            <field name="name">employee.details.view.form</field>
+            <field name="model">employee.details</field>
+            <field name="arch" type="xml">
+                <form string="Employee Details">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="age"/>
+                                <field name="gender"/>
+                            </group>
+                            <group>
+                                <field name="company"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+                <record id="action_employee_details_list" model="ir.actions.act_window">
+                    <field name="name">employee details</field>
+                    <field name="type">ir.actions.act_window</field>
+                    <field name="res_model">employee.details</field>
+                    <field name="view_mode">tree,form</field>
+                </record>
+        <menuitem
+            id="menu_employee_details_list_root"
+            name="Employee_details"
+            sequence="1"/>
+        <menuitem
+            id="menu_employee_details_child"
+            name="Human Resources"
+            parent="menu_employee_details_list_root"
+            sequence="0"
+            action ="action_employee_details_list"
+        />
+    </data>
+</odoo>

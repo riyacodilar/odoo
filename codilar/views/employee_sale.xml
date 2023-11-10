@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="employee_sale_tree_view" model="ir.ui.view">
+            <field name="name">employee.sale.tree</field>
+            <field name="model">employee.sale</field>
+            <field name="arch" type="xml">
+                <tree string="Employee sale">
+                    <field name="Dep_name"/>
+                    <field name="sale_amount"/>
+                </tree>
+            </field>
+        </record>
+        <record id="employee_sale_form_view" model="ir.ui.view">
+            <field name="name">employee.sale.view.form</field>
+            <field name="model">employee.sale</field>
+            <field name="arch" type="xml">
+                <form string="Employees sale">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="Dep_name"/>
+                                <field name="sale_amount"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+                <record id="action_employee_sale_list" model="ir.actions.act_window">
+                    <field name="name">employee sale</field>
+                    <field name="type">ir.actions.act_window</field>
+                    <field name="res_model">employee.sale</field>
+                    <field name="view_mode">tree,form</field>
+                </record>
+
+        <menuitem
+            id="menu_employee_sale_child"
+            name="sales"
+            parent="menu_employee_details_child"
+            sequence="1"
+            action ="action_employee_sale_list"
+        />
+    </data>
+</odoo>

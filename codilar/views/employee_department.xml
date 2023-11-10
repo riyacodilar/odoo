@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="employee_department_tree_view" model="ir.ui.view">
+            <field name="name">employee.department.tree</field>
+            <field name="model">employee.department</field>
+            <field name="arch" type="xml">
+                <tree string="Employee department">
+                    <field name="name"/>
+                    <field name="Dep_name"/>
+                    <field name="Dep_center"/>
+                    <field name="Dep_num"/>
+                </tree>
+            </field>
+        </record>
+        <record id="employee_department_form_view" model="ir.ui.view">
+            <field name="name">employee.department.view.form</field>
+            <field name="model">employee.department</field>
+            <field name="arch" type="xml">
+                <form string="Employee Department">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="Dep_name"/>
+                                <field name="Dep_center"/>
+                            </group>
+                            <group>
+                                <field name="Dep_num"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+                <record id="action_employee_department_list" model="ir.actions.act_window">
+                    <field name="name">employee department</field>
+                    <field name="type">ir.actions.act_window</field>
+                    <field name="res_model">employee.department</field>
+                    <field name="view_mode">tree,form</field>
+                </record>
+        <menuitem
+            id="menu_employee_department_list_root"
+            name="Employee_department"
+            sequence="1"/>
+        <menuitem
+            id="menu_employee_department_child"
+            name="department"
+            parent="menu_employee_details_list_root"
+            sequence="0"
+            action ="action_employee_department_list"
+        />
+    </data>
+</odoo>

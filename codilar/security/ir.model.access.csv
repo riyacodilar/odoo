@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_employee_details,access.employee.details,model_employee_details,,1,1,1,1
+access_employee_department,access.employee.department,model_employee_department,,1,1,1,1
+access_employee_sale,access.employee.sale,model_employee_sale,,1,1,1,1
+access_employee_recruitment,access.employee.recruitment,model_employee_recruitment,,1,1,1,1
+
+
