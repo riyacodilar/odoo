@@ -8,38 +8,47 @@
                 <tree string="Employee sale">
                     <field name="department"/>
                     <field name="sale_amount"/>
+                    <field name="sale_cost"/>
                 </tree>
             </field>
         </record>
+
         <record id="employee_sale_form_view" model="ir.ui.view">
             <field name="name">employee.sale.view.form</field>
             <field name="model">employee.sale</field>
             <field name="arch" type="xml">
                 <form string="Employees sale">
+                    <header>
+                       <button string="Total" name="calculate_result" type="object"/>
+                    </header>
                     <sheet>
                         <group>
                             <group>
                                 <field name="department"/>
                                 <field name="sale_amount"/>
+                                <field name="sale_cost"/>
+                                <field name="total"/>
+                                <field name="result"/>
                             </group>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
-                <record id="action_employee_sale_list" model="ir.actions.act_window">
-                    <field name="name">Sale</field>
-                    <field name="type">ir.actions.act_window</field>
-                    <field name="res_model">employee.sale</field>
-                    <field name="view_mode">tree,form</field>
-                </record>
+
+        <record id="action_employee_sale_list" model="ir.actions.act_window">
+            <field name="name">Sale</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employee.sale</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
         <menuitem
-            id="menu_employee_sale_child"
-            name="Sale"
-            parent="menu_employee_details_child"
-            sequence="1"
-            action ="action_employee_sale_list"
+                id="menu_employee_sale_child"
+                name="Sale"
+                parent="menu_employee_details_submenu"
+                sequence="1"
+                action="action_employee_sale_list"
         />
     </data>
 </odoo>

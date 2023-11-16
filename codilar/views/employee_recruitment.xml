@@ -34,10 +34,16 @@
                     <field name="view_mode">tree,form</field>
                 </record>
 
+         <menuitem
+            id="menu_employee_department_submenu"
+            name="Human resource"
+            parent="menu_employee_main_menu"
+            sequence="3"
+        />
         <menuitem
-            id="menu_employee_recruitment_child"
+            id="menu_employee_recruitment_submenu"
             name="Recruitment"
-            parent="menu_employee_department_child"
+            parent="menu_employee_department_submenu"
             sequence="1"
             action ="action_employee_recruitment_list"
         />

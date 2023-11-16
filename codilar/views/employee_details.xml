@@ -10,6 +10,7 @@
                     <field name="age"/>
                     <field name="gender"/>
                     <field name="company"/>
+                    <field name="email"/>
                 </tree>
             </field>
         </record>
@@ -18,6 +19,9 @@
             <field name="model">employee.details</field>
             <field name="arch" type="xml">
                 <form string="Employee Details">
+                    <header>
+                       <button string="Send By Email" name="action_send_email" type="object" class="oe_highlight"/>
+                    </header>
                     <sheet>
                         <group>
                             <group>
@@ -27,28 +31,29 @@
                             </group>
                             <group>
                                 <field name="company"/>
+                                <field name="email"/>
                             </group>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
-                <record id="action_employee_details_list" model="ir.actions.act_window">
-                    <field name="name">Employee Details</field>
-                    <field name="type">ir.actions.act_window</field>
-                    <field name="res_model">employee.details</field>
-                    <field name="view_mode">tree,form</field>
-                </record>
+        <record id="action_employee_details_list" model="ir.actions.act_window">
+            <field name="name">Employee Details</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employee.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
         <menuitem
-            id="menu_employee_details_list_root"
-            name="Employee"
-            sequence="1"/>
+                id="menu_employee_main_menu"
+                name="Employee"
+                sequence="0"/>
         <menuitem
-            id="menu_employee_details_child"
-            name="Employee"
-            parent="menu_employee_details_list_root"
-            sequence="0"
-            action ="action_employee_details_list"
+                id="menu_employee_details_submenu"
+                name="Employee Details"
+                parent="menu_employee_main_menu"
+                sequence="1"
+                action="action_employee_details_list"
         />
     </data>
 </odoo>

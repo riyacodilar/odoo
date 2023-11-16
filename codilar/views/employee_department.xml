@@ -5,7 +5,7 @@
             <field name="name">employee.department.tree</field>
             <field name="model">employee.department</field>
             <field name="arch" type="xml">
-                <tree string="Employee department">
+                <tree string="Employee department Tree">
                     <field name="name"/>
                     <field name="department"/>
                     <field name="department_centre"/>
@@ -17,7 +17,7 @@
             <field name="name">employee.department.view.form</field>
             <field name="model">employee.department</field>
             <field name="arch" type="xml">
-                <form string="Employee Department">
+                <form string="Employee Department Form">
                     <sheet>
                         <group>
                             <group>
@@ -34,20 +34,17 @@
             </field>
         </record>
                 <record id="action_employee_department_list" model="ir.actions.act_window">
-                    <field name="name">employee department</field>
+                    <field name="name">Employee Department</field>
                     <field name="type">ir.actions.act_window</field>
                     <field name="res_model">employee.department</field>
                     <field name="view_mode">tree,form</field>
                 </record>
+
         <menuitem
-            id="menu_employee_department_list_root"
-            name="Employee Department"
-            sequence="1"/>
-        <menuitem
-            id="menu_employee_department_child"
+            id="menu_employee_department"
             name="Department"
-            parent="menu_employee_details_list_root"
-            sequence="0"
+            parent="menu_employee_main_menu"
+            sequence="2"
             action ="action_employee_department_list"
         />
     </data>
