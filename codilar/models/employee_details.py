@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class EmployeeDetails(models.Model):
@@ -13,7 +13,15 @@ class EmployeeDetails(models.Model):
     ])
     company = fields.Many2one('res.company')
     email = fields.Char(String="Email")
+    address = fields.Char(String='Address')
+    state = fields.Char(String='State')
+    district = fields.Char(String='District')
+    description = fields.Text(String='description')
 
     def action_send_email(self):
         for rec in self:
             rec.env.ref('codilar.email_template_name').send_mail(rec.id, force_send=True)
+
+
+
+

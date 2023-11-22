@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="sale_report_template" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[contains(@class, 'page')]//table//thead//tr//th[4]" position="after">
+            <th class="text-right">Customer</th>
+        </xpath>
+        <xpath expr="//div[contains(@class,'page')]//table//tbody//tr//td[4]" position="after">
+            <td class="text-right">
+                <span t-field="line.name"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>

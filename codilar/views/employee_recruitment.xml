@@ -11,11 +11,24 @@
                 </tree>
             </field>
         </record>
+
+        <record id="action_recruitment_mail_view" model="ir.actions.act_window">
+            <field name="name">Recruitment Mail</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mail.compose.message</field>
+            <field name="view_mode">form</field>
+        </record>
+
         <record id="employee_recruitment_form_view" model="ir.ui.view">
             <field name="name">employee.recruitment.view.form</field>
             <field name="model">employee.recruitment</field>
             <field name="arch" type="xml">
                 <form string="Employees recruitment">
+                    <header>
+                        <button string="Send Recruitment Mail" type="action"
+                                name="%(codilar.action_recruitment_mail_view)d"
+                                class="oe_highlight"/>
+                    </header>
                     <sheet>
                         <group>
                             <group>
@@ -27,25 +40,25 @@
                 </form>
             </field>
         </record>
-                <record id="action_employee_recruitment_list" model="ir.actions.act_window">
-                    <field name="name">Recruitment</field>
-                    <field name="type">ir.actions.act_window</field>
-                    <field name="res_model">employee.recruitment</field>
-                    <field name="view_mode">tree,form</field>
-                </record>
+        <record id="action_employee_recruitment_list" model="ir.actions.act_window">
+            <field name="name">Recruitment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employee.recruitment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-         <menuitem
-            id="menu_employee_department_submenu"
-            name="Human resource"
-            parent="menu_employee_main_menu"
-            sequence="3"
+        <menuitem
+                id="menu_employee_department_submenu"
+                name="Human resource"
+                parent="menu_employee_main_menu"
+                sequence="3"
         />
         <menuitem
-            id="menu_employee_recruitment_submenu"
-            name="Recruitment"
-            parent="menu_employee_department_submenu"
-            sequence="1"
-            action ="action_employee_recruitment_list"
+                id="menu_employee_recruitment_submenu"
+                name="Recruitment"
+                parent="menu_employee_department_submenu"
+                sequence="1"
+                action="action_employee_recruitment_list"
         />
     </data>
 </odoo>

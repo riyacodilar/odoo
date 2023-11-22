@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="employee_report_template">
+        <t t-call="web.basic_layout">
+            <table class="table table-sm o_main_table">
+                <thead>
+                    <tr>
+                        <th name="name">Employee name</th>
+                        <th name="age">Age</th>
+                        <th name="gender">Gender</th>
+                        <th name="company">Company</th>
+                        <th name="email">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-esc="doc.name"/>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-esc="doc.age"/>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-esc="doc.gender"/>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-esc="doc.company.name"/>
+                            </t>
+                        </td>
+                        <td>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-esc="doc.email"/>
+                            </t>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </t>
+    </template>
+</odoo>

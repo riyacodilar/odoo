@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_employee_pdf" model="ir.actions.report">
+            <field name="name">pdf</field>
+            <field name="model">employee.details</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">codilar.employee_report_template</field>
+            <field name="report_file">codilar.employee_report_template</field>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

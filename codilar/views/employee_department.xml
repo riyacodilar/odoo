@@ -13,11 +13,23 @@
                 </tree>
             </field>
         </record>
+
+        <record id="action_mail_form_view" model="ir.actions.act_window">
+            <field name="name">Send Mail</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mail.compose.message</field>
+            <field name="view_mode">form</field>
+        </record>
+
         <record id="employee_department_form_view" model="ir.ui.view">
             <field name="name">employee.department.view.form</field>
             <field name="model">employee.department</field>
             <field name="arch" type="xml">
                 <form string="Employee Department Form">
+                    <header>
+                        <button string="Send Mail" type="action" name="%(codilar.action_mail_form_view)d"
+                                class="oe_highlight"/>
+                    </header>
                     <sheet>
                         <group>
                             <group>
